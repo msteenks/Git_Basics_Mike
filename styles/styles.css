@@ -2,6 +2,7 @@ html {
 	box-sizing: border-box;
   background: url("images/bg.jpg") no-repeat center center;
   background-size: cover;
+	background-attachment: fixed;
 }
 
 *,
@@ -14,23 +15,41 @@ body {
   font-family: 'Montserrat', sans-serif;
   margin: 0px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-areas:
-    "header header"
-    "stock fuel"
-    "gravity speed"
-    "foot foot";
+    "header header header header"
+    "stock fuel sidebar sidebar"
+    "gravity speed sidebar sidebar"
+    "foot foot foot foot";
+}
+
+header {
+	grid-area: header;
+	background: url("images/logo2x.png") no-repeat center center;
+	justify-content: flex-start;
+	height: 100px;
+	width: auto;
+}
+
+.sidebar {
+	background-color: red;
+	grid-area: sidebar;
+	width: 100%;
+	height: 100%;
 }
 
 div {
-  background-color: grey;
-  width: 500px;
+  background-color: rgba(255, 255, 255, 0.3);
+	color: #FFFFFF;
+	border-radius: 20px;
+  width: 300px;
   height: 300px;
-  margin: 5%;
 }
 
-h1 {
-  padding-left: 5%;
+p {
+  padding-left: 10%;
+	font-size: 30px;
+	font-weight: 500;
 }
 
 h3 {
@@ -38,405 +57,157 @@ h3 {
   margin-top: -5%;
 }
 
-
-/* RESET-STOCK STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.chart-stock {
-  margin: 0 auto;
-  padding: 0;
-  list-style-type: none;
-}
-
-.chart-stock *,
-.chart-stock::before {
-  box-sizing: border-box;
-}
-
-
-/* CHART-STOCK STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .stock {
-  grid-area: stock;
+	grid-area: stock;
 }
 
-h1 {
-  padding-left: 5%;
-}
-
-
-.chart-stock {
-  position: relative;
-  width: 350px;
-  height: 175px;
-  overflow: hidden;
-}
-
-.chart-stock::before,
-.chart-stock::after {
-  position: absolute;
-}
-
-.chart-stock::before {
-  content: '';
-  width: inherit;
-  height: inherit;
-  border: 45px solid rgba(211, 211, 211, .3);
-  border-bottom: none;
-  border-top-left-radius: 175px;
-  border-top-right-radius: 175px;
-}
-
-.chart-stock::after {
-  content: '';
-  left: 50%;
-  bottom: 10px;
-  transform: translateX(-50%);
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: cadetblue;
-}
-
-.chart-stock li {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: inherit;
-  height: inherit;
-  border: 45px solid;
-  border-top: none;
-  border-bottom-left-radius: 175px;
-  border-bottom-right-radius: 175px;
-  transform-origin: 50% 0;
-  animation-fill-mode: forwards;
-  animation-duration: .8s;
-  animation-timing-function: linear;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-
-}
-
-.chart-stock li:nth-child(1) {
-  z-index: 4;
-  border-color: blue;
-  animation-name: rotate-one;
-}
-
-.chart-stock li:nth-child(2) {
-  z-index: 3;
-  border-color: yellow;
-  animation-name: rotate-two;
-  animation-delay: .8s;
-}
-
-
-/* ANIMATIONS
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-@keyframes rotate-one {
-  100% {
-    transform: rotate(81deg);
-    /**
-     * 45% => 81deg
-     * percentage : 100 * 180 = ...deg
-     */
-  }
-}
-
-@keyframes rotate-two {
-  0% {
-    transform: rotate(81deg);
-  }
-  100% {
-    transform: rotate(117deg);
-    /**
-     * 65% => 117deg
-     */
-  }
-}
-
-/* RESET-FUEL STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.chart-fuel {
-  margin: 0 auto;
-  padding: 0;
-  list-style-type: none;
-}
-
-.chart-fuel *,
-.chart-fuel::before {
-  box-sizing: border-box;
-}
-
-
-
-/* CHART-FUEL STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .fuel {
-  grid-area: fuel;
+	grid-area: fuel;
 }
 
-h1 {
-  padding-left: 5%;
-}
-
-.chart-fuel {
-  position: relative;
-  width: 350px;
-  height: 175px;
-  overflow: hidden;
-}
-
-.chart-fuel::before,
-.chart-fuel::after {
-  position: absolute;
-}
-
-.chart-fuel::before {
-  content: '';
-  width: inherit;
-  height: inherit;
-  border: 45px solid rgba(211, 211, 211, .3);
-  border-bottom: none;
-  border-top-left-radius: 175px;
-  border-top-right-radius: 175px;
-}
-
-.chart-fuel::after {
-  content: '';
-  left: 50%;
-  bottom: 10px;
-  transform: translateX(-50%);
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: cadetblue;
-}
-
-.chart-fuel li {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: inherit;
-  height: inherit;
-  border: 45px solid;
-  border-top: none;
-  border-bottom-left-radius: 175px;
-  border-bottom-right-radius: 175px;
-  transform-origin: 50% 0;
-  animation-fill-mode: forwards;
-  animation-duration: .8s;
-  animation-timing-function: linear;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-
-}
-
-.chart-fuel li:nth-child(1) {
-  z-index: 4;
-  border-color: blue;
-  animation-name: rotate-three;
-}
-
-
-/* ANIMATIONS
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-@keyframes rotate-three {
-  100% {
-    transform: rotate(135deg);
-    /**
-     * 75% => 135deg
-     */
-  }
-}
-
-
-/* RESET-GRAVITY STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.chart-gravity {
-  margin: 0 auto;
-  padding: 0;
-  list-style-type: none;
-}
-
-.chart-gravity *,
-.chart-gravity::before {
-  box-sizing: border-box;
-}
-
-
-
-/* CHART-GRAVITY STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .gravity {
-  grid-area: gravity;
+	grid-area: gravity;
 }
 
-h1 {
-  padding-left: 5%;
-}
-
-.chart-gravity {
-  position: relative;
-  width: 350px;
-  height: 175px;
-  overflow: hidden;
-}
-
-.chart-gravity::before,
-.chart-gravity::after {
-  position: absolute;
-}
-
-.chart-gravity::before {
-  content: '';
-  width: inherit;
-  height: inherit;
-  border: 45px solid rgba(211, 211, 211, .3);
-  border-bottom: none;
-  border-top-left-radius: 175px;
-  border-top-right-radius: 175px;
-}
-
-.chart-gravity::after {
-  content: '';
-  left: 50%;
-  bottom: 10px;
-  transform: translateX(-50%);
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: cadetblue;
-}
-
-.chart-gravity li {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: inherit;
-  height: inherit;
-  border: 45px solid;
-  border-top: none;
-  border-bottom-left-radius: 175px;
-  border-bottom-right-radius: 175px;
-  transform-origin: 50% 0;
-  animation-fill-mode: forwards;
-  animation-duration: .8s;
-  animation-timing-function: linear;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-
-}
-
-.chart-gravity li:nth-child(1) {
-  z-index: 4;
-  border-color: red;
-  animation-name: rotate-four;
-}
-
-
-/* ANIMATIONS
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-@keyframes rotate-four {
-  100% {
-    transform: rotate(135deg);
-    /**
-     * 70% => 126deg
-     */
-  }
-}
-
-
-/* RESET-SPEED STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.chart-speed {
-  margin: 0 auto;
-  padding: 0;
-  list-style-type: none;
-}
-
-.chart-speed *,
-.chart-speed::before {
-  box-sizing: border-box;
-}
-
-
-
-/* CHART-SPEED STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .speed {
-  grid-area: speed;
+	grid-area: speed;
 }
 
-.chart-speed {
-  position: relative;
-  width: 350px;
-  height: 175px;
-  overflow: hidden;
+.stock, .gravity {
+	margin-left: 30%;
+	margin-right: 8%;
 }
 
-.chart-speed::before,
-.chart-speed::after {
-  position: absolute;
-}
-
-.chart-speed::before {
-  content: '';
-  width: inherit;
-  height: inherit;
-  border: 45px solid rgba(211, 211, 211, .3);
-  border-bottom: none;
-  border-top-left-radius: 175px;
-  border-top-right-radius: 175px;
-}
-
-.chart-speed::after {
-  content: '';
-  left: 50%;
-  bottom: 10px;
-  transform: translateX(-50%);
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: cadetblue;
-}
-
-.chart-speed li {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: inherit;
-  height: inherit;
-  border: 45px solid;
-  border-top: none;
-  border-bottom-left-radius: 175px;
-  border-bottom-right-radius: 175px;
-  transform-origin: 50% 0;
-  animation-fill-mode: forwards;
-  animation-duration: .8s;
-  animation-timing-function: linear;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-
-}
-
-.chart-speed li:nth-child(1) {
-  z-index: 4;
-  border-color: orange;
-  animation-name: rotate-five;
+.stock, .fuel {
+	margin-top: 10%;
+	margin-bottom: 10%;
 }
 
 
-/* ANIMATION-SPEED
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media only screen and (max-width: 1620px) {
 
-@keyframes rotate-five {
-  100% {
-    transform: rotate(162deg);
-    /**
-     * 90% => 162deg
-     */
-  }
+	div {
+	  background-color: rgba(255, 255, 255, 0.3);
+		color: #FFFFFF;
+		border-radius: 20px;
+		width: 250px;
+		height: 250px;
+	}
+
+	p {
+	  padding-left: 10%;
+		font-size: 20px;
+		font-weight: 500;
+	}
+
+	h3 {
+	  text-align: center;
+	  margin-top: -5%;
+	}
+
+	.stock, .fuel {
+		margin-top: 25%;
+		margin-bottom: 10%;
+	}
+
+	.stock, .gravity {
+		margin-left: 40%;
+		margin-right: 8%;
+	}
+}
+
+@media only screen and (max-width: 1320px) {
+
+	div {
+		background-color: rgba(255, 255, 255, 0.3);
+		color: #FFFFFF;
+		border-radius: 20px;
+		width: 200px;
+		height: 200px;
+	}
+
+	p {
+		padding-left: 10%;
+		font-size: 20px;
+		font-weight: 500;
+	}
+
+	h3 {
+		text-align: center;
+		margin-top: -5%;
+
+}
+
+@media only screen and (max-width: 1020px) {
+
+	div {
+		background-color: rgba(255, 255, 255, 0.3);
+		color: #FFFFFF;
+		border-radius: 20px;
+		width: 200px;
+		height: 200px;
+	}
+
+	p {
+		padding-left: 10%;
+		font-size: 20px;
+		font-weight: 500;
+	}
+
+	h3 {
+		text-align: center;
+		margin-top: -5%;
+	}
+
+	.stock, .fuel {
+		margin-top: 20%;
+		margin-bottom: 10%;
+	}
+
+	.stock, .gravity {
+		margin-left: 30%;
+		margin-right: 8%;
+	}
+}
+
+@media only screen and (max-width: 520px) {
+
+	body {
+	  font-family: 'Montserrat', sans-serif;
+	  margin: 0px;
+	  display: grid;
+	  grid-template-columns: 1fr;
+	  grid-template-areas:
+	    "header"
+	    "stock"
+			"fuel"
+	    "gravity"
+			"speed"
+	    "foot";
+	}
+
+	div {
+	  background-color: rgba(255, 255, 255, 0.3);
+		color: #FFFFFF;
+		border-radius: 20px;
+	  width: 250px;
+	  height: 250px;
+	}
+
+	p {
+	  padding-left: 10%;
+		font-size: 20px;
+		font-weight: 500;
+	}
+
+	h3 {
+	  text-align: center;
+	  margin-top: -5%;
+	}
+
+	.stock, .fuel, .gravity, .speed {
+		margin-bottom: 10%;
+		margin-left: 20%;
+	}
+
 }
