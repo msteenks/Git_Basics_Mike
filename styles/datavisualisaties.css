@@ -136,14 +136,10 @@ h1 {
   grid-area: fuel;
 }
 
-h1 {
-  padding-left: 5%;
-}
-
 .chart-fuel {
   position: relative;
-  width: 350px;
-  height: 175px;
+  width: 200px;
+  height: 100px;
   overflow: hidden;
 }
 
@@ -156,10 +152,10 @@ h1 {
   content: '';
   width: inherit;
   height: inherit;
-  border: 45px solid rgba(211, 211, 211, .3);
+  border: 25px solid rgba(255, 255, 255, 0.3);
   border-bottom: none;
-  border-top-left-radius: 175px;
-  border-top-right-radius: 175px;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
 }
 
 .chart-fuel::after {
@@ -169,7 +165,7 @@ h1 {
   transform: translateX(-50%);
   font-size: 1.1rem;
   font-weight: bold;
-  color: cadetblue;
+  color: #2e2e2e;
 }
 
 .chart-fuel li {
@@ -178,13 +174,13 @@ h1 {
   left: 0;
   width: inherit;
   height: inherit;
-  border: 45px solid;
+  border: 25px solid;
   border-top: none;
-  border-bottom-left-radius: 175px;
-  border-bottom-right-radius: 175px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
   transform-origin: 50% 0;
   animation-fill-mode: forwards;
-  animation-duration: .8s;
+  animation-duration: 1s;
   animation-timing-function: linear;
   transform-style: preserve-3d;
   backface-visibility: hidden;
@@ -193,7 +189,7 @@ h1 {
 
 .chart-fuel li:nth-child(1) {
   z-index: 4;
-  border-color: blue;
+  border-color: #bdcad0;
   animation-name: rotate-three;
 }
 
