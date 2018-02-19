@@ -6,35 +6,26 @@
 		<title>Space X</title>
 		<link type="text/css" href="styles/styles.css" rel="stylesheet" />
 		<link type="text/css" href="styles/datavisualisaties.css" rel="stylesheet" />
-		<script type="text/javascript" src="scripts/scripts.js"></script>
-		<script src="scripts/jquery.min.js"></script>
-		<script src="scripts/jquery.numscroller-1.0.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 	</head>
 	<body>
 		<header class="grid-item header"></header>
 		<div class="grid-item stock">
 			<p>Stock</p>
-			<!-- <ul class="chart-stock">
-			  <li>
-			    <span>- Water</span>
-			  </li>
-			  <li>
-			    <span>- Food</span>
-			  </li>
-			</ul> -->
+			<div class="myChart">
+				<canvas id="stock"></canvas>
+			</div>
 		</div>
 		<div class="grid-item fuel">
 			<p>Fuel</p>
-			<ul class="chart-fuel">
-			  <li>
-			    <span></span>
-			  </li>
-			</ul>
-			<h3><span class='numscroller' data-min='0' data-max='75' data-delay='2' data-increment='2'>75</span> %<h3>
+			<div class="myChart">
+				<canvas id="fuel"></canvas>
+			</div>
 		</div>
 		<sidebar class="grid-item sidebar"></sidebar>
-		<div class="grid-item gravity">
-			<p>Gravity Mars</p>
+		<div class="grid-item distance">
+			<p>Distance Mars</p>
+			<h2 id="number"><span id="counter1"></span><span id="counter2"></span></h2>
 			<!-- <ul class="chart-gravity">
 			  <li>
 			    <span></span>
@@ -51,5 +42,6 @@
 			</ul>
 			<h3><span class='numscroller' data-min='0' data-max='40000' data-delay='2' data-increment='250'>40000</span> km/h</h3> -->
 		</div>
+		<script type="text/javascript" src="scripts/scripts.js"></script>
 	</body>
 </html>
