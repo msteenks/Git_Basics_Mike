@@ -1,16 +1,14 @@
-var myVar = setInterval(myTimer, 100);
-var counter = 100;
+var myVar = setInterval(myTimer, 1500);
+var counter = 5;
 
 function myTimer() {
 
   counter--;
-  document.getElementById('counter1').innerHTML = counter;
-  document.getElementById('counter2').innerHTML = ' '+"km";
+  document.getElementById('counter').innerHTML = '4013' + counter;
+  document.getElementById('eenheid').innerHTML = ' ' + 'km/h';
 
-  if(counter == 0) {
-      clearInterval(myVar);
-      document.getElementById('counter1').innerHTML = "Prepair for landing";
-      document.getElementById('counter2').innerHTML = "";
+  if(counter >= 3) {
+      counter = Math.round(Math.random()*(4-9))+9; // generate new time (between 4 and 9)
 
   }
 
@@ -40,41 +38,84 @@ function myTimer() {
 var ctx = document.getElementById('stock');
 var myDoughnutChart = new Chart(ctx, {
     type: 'radar',
-
+    backgroundColor: '#283137',
     data: {
-      labels: ['towels', 'shower gel', 'toothpaste', 'food', 'Water'],
+      labels: ['%', 'Oxygen', 'Fuel', 'Food', 'Water'],
       datasets: [
         {
           label: 'Stock',
           backgroundColor: 'rgba(40, 49, 55, 0.1)',
           borderColor: '#283137',
           borderWidth: 2,
-          data: [1, 4, 3, 8, 10]
+          lineTension: 10,
+          data: [0, 70, 40, 80, 100]
         }
       ]
     },
-    // options: {
-    //   backgroundColor: '#283137'
-    // }
+    options: {
+    animation: {
+      duration: 5000,
+    },
+    legend: {
+        display: false,
+    }
+  }
 });
 
-var ctx = document.getElementById('fuel');
+var ctx = document.getElementById('planets');
 var myDoughnutChart = new Chart(ctx, {
-    type: 'pie',
-
+    type: 'polarArea',
     data: {
-      label: ['Full', 'Empty'],
+      label: ['Earth', 'Venus', 'Mercury'],
       datasets: [
         {
-          label: 'Fuel',
-          backgroundColor: ['#283137', '#F5F5F5'],
-          borderWidth: [0, 0],
-          data: [60, 40]
+          label: 'Distance',
+          backgroundColor: ['#283137', '#a7a7a7', '#bdcad0'],
+          borderWidth: [0, 0, 0, 0],
+          data: [49, 90, 141]
         }
       ],
-      labels: ['Full', 'Empty'],
+      labels: ['Earth', 'Venus', 'Mercury'],
     },
     options: {
       cutoutPercentage: 80,
+      animation: {
+        duration: 5000,
+      },
+      legend: {
+        display: true,
+        labels: {
+          boxWidth: 10,
+          fontSize: 10,
+        }
+      }
+    }
+});
+
+var ctx = document.getElementById('distance');
+var myDoughnutChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      label: ['Distance'],
+      datasets: [
+        {
+          label: 'distance',
+          // backgroundColor: ['#283137'],
+          backgroundColor: 'rgba(40, 49, 55, 0.1)',
+          borderColor: '#283137',
+          borderWidth: [0.75],
+          data: [78]
+        }
+      ],
+      labels: ['Distance'],
+    },
+    options: {
+      cutoutPercentage: 80,
+      animation: {
+        duration: 250000,
+      },
+      legend: {
+        display: false,
+      }
     }
 });
