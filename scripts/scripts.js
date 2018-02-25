@@ -1,42 +1,102 @@
-var myVar = setInterval(myTimer, 1500);
-var counter = 5;
+// UPDATE CHARTS
 
-function myTimer() {
+var step = 0;
+var myVar = setInterval(myStock, 1000);
+var duration = 200;
 
-  counter--;
-  document.getElementById('counter').innerHTML = '4013' + counter;
-  document.getElementById('eenheid').innerHTML = ' ' + 'km/h';
+function myStock() {
 
-  if(counter >= 3) {
-      counter = Math.round(Math.random()*(4-9))+9; // generate new time (between 4 and 9)
+	step++;
 
-  }
+	if(step <= duration) {
+
+		updateChartx(myStockChart, 1, Math.round(duration - (step / 8)));//Oxygen
+		updateChartx(myStockChart, 2, Math.round(duration - (step / 2)));//Fuel
+		updateChartx(myStockChart, 3, Math.round(duration - (step / 6)));//Food
+		updateChartx(myStockChart, 4, Math.round(duration - (step / 4)));//Water
+
+		updateChartDistance(step);
+
+	}
+}
+
+function updateChartx(chart, index, newvalue) {
+  chart.data.datasets[0].data[index] = newvalue;
+  chart.update();
+  return;
+}
+
+function updateChartDistance(stapangle) {
+  updateChartx(myDistanceChart, 0, stapangle);
+  updateChartx(myDistanceChart, 1, (duration-stapangle));
+}
+
+// OPLOPENDE, CONTANTE EN DALENDE SNELHEID
+
+var opstijgen = true;
+var myVar = setInterval(myTimer, 100);
+var counter = 0;
+var dalenInt;
+function setInnerHTML() {
+	document.getElementById("counter").innerHTML = counter;
+  document.getElementById("eenheid").innerHTML = ' KM/H';
 
 }
 
-// var ctx = document.getElementById('stock');
-// var myDoughnutChart = new Chart(ctx, {
-//     type: 'doughnut',
-//
-//     data: {
-//       label: ['Water', 'Food'],
-//       datasets: [
-//         {
-//           label: 'Stock',
-//           backgroundColor: ['#283137', '#58615b'],
-//           borderWidth: [0, 0],
-//           data: [70, 20]
-//         }
-//       ],
-//       labels: ['Water', 'Food'],
-//     },
-//     options: {
-//       cutoutPercentage: 80,
-//     }
-// });
+function myTimer() {
+	setInnerHTML();
+	if (counter >= 30000 && counter < 40000) {
+		counter += 255;
+	}else if (counter >= 40212){
+		counter = Math.round(Math.random()*(40212-40219))+40219;
+		indeLucht();
+	}else{
+		counter += 755;
+	}
+
+}//function mytimer()
+function indeLucht() {
+
+	if (opstijgen == true) {
+		opstijgen = false;
+		setTimeout(function() {
+			dalen();
+
+			clearInterval(myVar);
+			 dalenInt = setInterval(dalen, 100)
+		}, 150000);
+	}
+}
+
+function dalen() {
+	setInnerHTML();
+	if (counter <= 0) {
+		//stop
+		counter = 0;
+		setInnerHTML();
+		clearInterval(dalenInt);
+
+		var x = document.getElementById('distance');
+		x.style.display = "none";
+
+		var x = document.getElementById('landed');
+		x.style.display = "block";
+
+		document.getElementById('landing').innerHTML = "";
+
+	}else{
+		if (counter >= 30000 && counter <= 45000) {
+			counter -= 205;
+		}else{
+			counter -= 75;
+		}
+	}
+}
+
+// DATAVISUALISATIONS
 
 var ctx = document.getElementById('stock');
-var myDoughnutChart = new Chart(ctx, {
+var myStockChart = new Chart(ctx, {
     type: 'radar',
     backgroundColor: '#283137',
     data: {
@@ -48,14 +108,17 @@ var myDoughnutChart = new Chart(ctx, {
           borderColor: '#283137',
           borderWidth: 2,
           lineTension: 10,
-          data: [0, 70, 40, 80, 100]
+          data: [0, duration, duration, duration, duration]
         }
       ]
     },
     options: {
-    animation: {
-      duration: 5000,
-    },
+			tooltips: {
+				enabled: false,
+			},
+	    animation: {
+	      duration: 5000,
+	    },
     legend: {
         display: false,
     }
@@ -63,7 +126,7 @@ var myDoughnutChart = new Chart(ctx, {
 });
 
 var ctx = document.getElementById('planets');
-var myDoughnutChart = new Chart(ctx, {
+var myPlanetsChart = new Chart(ctx, {
     type: 'polarArea',
     data: {
       label: ['Earth', 'Venus', 'Mercury'],
@@ -71,14 +134,13 @@ var myDoughnutChart = new Chart(ctx, {
         {
           label: 'Distance',
           backgroundColor: ['#283137', '#a7a7a7', '#bdcad0'],
-          borderWidth: [0, 0, 0, 0],
-          data: [49, 90, 141]
+          borderWidth: [0, 0, 0],
+          data: [78, 119, 170]
         }
       ],
       labels: ['Earth', 'Venus', 'Mercury'],
     },
     options: {
-      cutoutPercentage: 80,
       animation: {
         duration: 5000,
       },
@@ -93,27 +155,27 @@ var myDoughnutChart = new Chart(ctx, {
 });
 
 var ctx = document.getElementById('distance');
-var myDoughnutChart = new Chart(ctx, {
-    type: 'pie',
+var myDistanceChart = new Chart(ctx, {
+    type: 'doughnut',
     data: {
-      label: ['Distance'],
+      label: ['', 'Distance'],
       datasets: [
         {
           label: 'distance',
           // backgroundColor: ['#283137'],
           backgroundColor: 'rgba(40, 49, 55, 0.1)',
-          borderColor: '#283137',
-          borderWidth: [0.75],
-          data: [78]
+          borderColor: 'rgba(40, 49, 55, 0.8)',
+          borderWidth: [0],
+          data: [0, duration],
         }
       ],
-      labels: ['Distance'],
+      labels: ['', 'Distance'],
     },
     options: {
       cutoutPercentage: 80,
-      animation: {
-        duration: 250000,
-      },
+			tooltips: {
+				enabled: false,
+			},
       legend: {
         display: false,
       }

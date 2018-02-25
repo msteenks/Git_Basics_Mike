@@ -109,7 +109,7 @@ h3 {
 .myChartDistance {
 	width: 150px;
 	height: 150px;
-	margin-top: 9%;
+	margin-top: 12%;
 	margin-left: 19%;
 	/* background-color: red; */
 }
@@ -120,11 +120,16 @@ h3 {
 	justify-self: end;
 }
 
-.landing {
+#landing {
 	font-size: 10px;
 	padding-left: 5%;
 	padding-top: 5%;
 	font-weight: 10;
+}
+
+#landed {
+	text-align: center;
+	margin-top: 52%;
 }
 
 /* STYLES SPEED */
@@ -150,7 +155,7 @@ h3 {
 }
 
 #counter {
-	font-size: 50px;
+	font-size: 45px;
 	color: rgba(40, 49, 55, 0.3);
 }
 
@@ -166,6 +171,23 @@ h3 {
 
 
 @media only screen and (max-width: 1620px) {
+
+	body {
+	  /* font-family: 'Montserrat', sans-serif; */
+		font-family: 'Orbitron', sans-serif;
+		margin-top: 25px;
+		margin-bottom: 0px;
+		margin-left: 0px;
+		margin-right: 0px;
+	  display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-row-gap: 20px;
+	  grid-template-areas:
+	    "header header sidebar"
+	    "stock planets sidebar"
+	    "distance speed sidebar"
+	    "footer footer footer";
+	}
 
 	p {
 	  padding-left: 10%;
