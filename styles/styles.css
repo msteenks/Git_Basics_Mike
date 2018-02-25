@@ -77,7 +77,7 @@ p {
 }
 
 .stock {
-	background-color: rgba(255, 255, 255, 0.4);
+	background-color: rgba(255, 255, 255, 0.6);
 	grid-area: stock;
 	justify-self: end;
 }
@@ -94,7 +94,7 @@ p {
 }
 
 .planets {
-	background-color: rgba(255, 255, 255, 0.4);
+	background-color: rgba(255, 255, 255, 0.6);
 	grid-area: planets;
 }
 
@@ -115,7 +115,7 @@ h3 {
 }
 
 .distance {
-	background-color: rgba(255, 255, 255, 0.4);
+	background-color: rgba(255, 255, 255, 0.6);
 	grid-area: distance;
 	justify-self: end;
 }
@@ -142,7 +142,7 @@ h3 {
 }
 
 .speed {
-	background-color: rgba(255, 255, 255, 0.4);
+	background-color: rgba(255, 255, 255, 0.6);
 	grid-area: speed;
 }
 
