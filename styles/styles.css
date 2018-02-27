@@ -101,7 +101,8 @@ p {
 
 h3 {
 	font-size: 10px;
-	padding-left: 5%;
+	padding-left: 8%;
+	padding-top: 2%;
 }
 
 
@@ -121,16 +122,10 @@ h3 {
 	justify-self: end;
 }
 
-#landing {
-	font-size: 10px;
-	padding-left: 5%;
-	padding-top: 5%;
-	font-weight: 10;
-}
-
 #landed {
 	text-align: center;
-	margin-top: 52%;
+	margin-top: 65%;
+	font-size: 30px;
 }
 
 /* STYLES SPEED */
@@ -227,8 +222,18 @@ h3 {
 		/* background-color: red; */
 	}
 
+	#landed {
+		margin-top: 52%;
+		font-size: 20px;
+	}
+
 	#number {
 		padding-top: 15%;
+	}
+
+	h3 {
+		padding-left: 8%;
+		padding-top: 0%;
 	}
 
 }
