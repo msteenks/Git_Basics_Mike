@@ -64,7 +64,7 @@ function indeLucht() {
 
 			clearInterval(myVar);
 			 dalenInt = setInterval(dalen, 100)
-		}, 150000);
+		}, 145000);
 	}
 }
 
@@ -135,7 +135,7 @@ var myPlanetsChart = new Chart(ctx, {
           label: 'Distance',
           backgroundColor: ['#283137', '#a7a7a7', '#bdcad0'],
           borderWidth: [0, 0, 0],
-          data: [78, 119, 170]
+          data: [48, 73, 105]
         }
       ],
       labels: ['Earth', 'Venus', 'Mercury'],

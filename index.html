@@ -6,7 +6,6 @@
 		<title>Space X</title>
 		<link type="text/css" href="styles/styles.css" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
-		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script> -->
 		<script type="text/javascript" src="scripts/chart.js"></script>
 	</head>
 	<body>
@@ -22,18 +21,12 @@
 			<div class="myChartPlanets">
 				<canvas id="planets"></canvas>
 			</div>
-			<h3>* In miljoenen km's</h3>
+			<h3><strong>* In million miles</strong></h3>
 		</div>
 		<sidebar class="grid-item sidebar"></sidebar>
 		<div class="grid-item speed">
 			<p>Speed</p>
 			<h2 id="number"><span id="counter"></span><br /><span id="eenheid"></span></h2>
-			<!-- <ul class="chart-gravity">
-			  <li>
-			    <span></span>
-			  </li>
-			</ul>
-			<h3><span class='numscroller' data-min='0' data-max='3.711' data-delay='0.8' data-increment='1'>3.711</span> m/s2<h3> -->
 		</div>
 		<div class="grid-item distance">
 			<p>Until landing</p>
@@ -42,6 +35,9 @@
 				<h2 id="landed" style="display: none;">LANDED</h2>
 			</div>
 		</div>
+		<footer class="grid-item footer">
+			<h1>&copy; 2018 - <a href="http://giraffedesign.nl/" class="copyright">Giraffe Design</a></h1>
+		</footer>
 		<script type="text/javascript" src="scripts/scripts.js"></script>
 	</body>
 </html>

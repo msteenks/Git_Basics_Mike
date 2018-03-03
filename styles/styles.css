@@ -3,7 +3,6 @@ html {
   background: url("images/bg_2.jpg") no-repeat center center;
   background-size: cover;
 	background-attachment: fixed;
-	/* background-color: #151515; */
 }
 
 *: {
@@ -11,7 +10,6 @@ html {
 }
 
 body {
-  /* font-family: 'Montserrat', sans-serif; */
 	font-family: 'Orbitron', sans-serif;
 	margin-top: 60px;
 	margin-bottom: 0px;
@@ -51,7 +49,6 @@ p {
 	grid-area: header;
 	display: flex;
 	background: url("images/logo2x.png") no-repeat center center;
-	justify-content: center;
 	margin-left: 5%;
 	height: 100px;
 	width: auto;
@@ -74,7 +71,6 @@ p {
 	height: 210px;
 	margin-top: 0%;
 	margin-left: 16%;
-	/* background-color: blue; */
 }
 
 .stock {
@@ -84,14 +80,13 @@ p {
 }
 
 
-/* STYLES FUEL */
+/* STYLES PLANETS */
 
 .myChartPlanets {
 	width: 200px;
 	height: 200px;
 	margin-top: 0%;
 	margin-left: 14%;
-	/* background-color: red; */
 }
 
 .planets {
@@ -113,7 +108,6 @@ h3 {
 	height: 160px;
 	margin-top: 14%;
 	margin-left: 23%;
-	/* background-color: red; */
 }
 
 .distance {
@@ -133,7 +127,6 @@ h3 {
 .myChartSpeed {
 	width: 180px;
 	height: 180px;
-	/* background-color: red; */
 }
 
 .speed {
@@ -160,15 +153,31 @@ h3 {
 
 /* STYLES FOOTER */
 
-.footer {
-	display: flex;
+footer {
+	grid-area: footer;
+	font-size: 6px;
+	text-align: right;
+	position: absolute;
+  right: 0;
+	bottom: 0;
+	left: 0;
+	margin-right: 1%;
+	margin-bottom: 0.2%;
+}
+
+.copyright {
+	text-decoration: none;
+	color: #000000;
+}
+
+.copyright:hover {
+	color: rgba(40, 49, 55, 0.3);
 }
 
 
 @media only screen and (max-width: 1620px) {
 
 	body {
-	  /* font-family: 'Montserrat', sans-serif; */
 		font-family: 'Orbitron', sans-serif;
 		margin-top: 25px;
 		margin-bottom: 0px;
@@ -184,6 +193,8 @@ h3 {
 	    "footer footer footer";
 	}
 
+	/* GENERAL STYLES */
+
 	div {
 		color: rgba(40, 49, 55, 0.3);
 		border-radius: 10px;
@@ -198,37 +209,22 @@ h3 {
 		font-weight: 500;
 	}
 
+	/* STYLES STOCK */
+
 	.myChartStock {
 		width: 200px;
 		height: 200px;
 		margin-top: -6%;
 		margin-left: 10%;
-		/* background-color: blue; */
 	}
+
+	/* STYLES PlANETS */
 
 	.myChartPlanets {
 		width: 180px;
 		height: 180px;
 		margin-top: -6%;
 		margin-left: 12%;
-		/* background-color: red; */
-	}
-
-	.myChartDistance {
-		width: 150px;
-		height: 150px;
-		margin-top: 12%;
-		margin-left: 19%;
-		/* background-color: red; */
-	}
-
-	#landed {
-		margin-top: 52%;
-		font-size: 20px;
-	}
-
-	#number {
-		padding-top: 15%;
 	}
 
 	h3 {
@@ -236,6 +232,25 @@ h3 {
 		padding-top: 0%;
 	}
 
+	/* STYLES DISTANCE*/
+
+	.myChartDistance {
+		width: 150px;
+		height: 150px;
+		margin-top: 12%;
+		margin-left: 19%;
+	}
+
+	#landed {
+		margin-top: 52%;
+		font-size: 25px;
+	}
+
+	/* STYLES SPEED */
+
+	#number {
+		padding-top: 15%;
+	}
 }
 
 @media only screen and (max-width: 1320px) {
@@ -245,7 +260,6 @@ h3 {
 @media only screen and (max-width: 1020px) {
 
 	body {
-	  /* font-family: 'Montserrat', sans-serif; */
 		font-family: 'Orbitron', sans-serif;
 		margin-top: 25px;
 		margin-bottom: 0px;
@@ -260,6 +274,8 @@ h3 {
 	    "distance speed sidebar"
 	    "footer footer footer";
 	}
+
+	/* GENERAL STYLES */
 
 	div {
 		color: rgba(40, 49, 55, 0.3);;
@@ -286,6 +302,8 @@ h3 {
 	    "distance speed"
 	    "footer footer";
 	}
+
+	/* GENERAL STYLES */
 
 	p {
 	  padding-left: 10%;
@@ -316,27 +334,37 @@ h3 {
 			"planets"
 	    "distance"
 			"speed"
-	    "foot";
+	    "footer";
 	}
+
+	/* STYLES STOCK */
 
 	.stock {
 		grid-area: stock;
 		justify-self: center;
 	}
 
+	/* STYLES PLANETS */
+
 	.planets {
 		grid-area: planets;
 		justify-self: center;
 	}
+
+	/* STYLES DISTANCE*/
 
 	.distance {
 		grid-area: distance;
 		justify-self: center;
 	}
 
+	/* STYLES SPEED */
+
 	.speed {
 		grid-area: speed;
 		justify-self: center;
 	}
+
+	/* STYLES FOOTER */
 
 }
