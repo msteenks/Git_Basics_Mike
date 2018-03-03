@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="nl">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Space X</title>
-		<link type="text/css" href="styles/styles.css" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+		<meta 	charset="UTF-8" />
+		<meta 	name="viewport" content="width=device-width, initial-scale=1.0">
+		<link 	type="text/css" href="styles/styles.css" rel="stylesheet" />
+		<link 	href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" />
 		<script type="text/javascript" src="scripts/chart.js"></script>
 	</head>
 	<body>
 		<header class="grid-item header"></header>
+
+		<!-- DATAVISUALISATIE STOCK -->
 		<div class="grid-item stock">
 			<p>Stock</p>
 			<div class="myChartStock">
 				<canvas id="stock"></canvas>
 			</div>
 		</div>
+
+		<!-- DATAVISUALISATIE DISTANCE PLANETS -->
 		<div class="grid-item planets">
 			<p>Distance planets</p>
 			<div class="myChartPlanets">
@@ -23,11 +27,8 @@
 			</div>
 			<h3><strong>* In million miles</strong></h3>
 		</div>
-		<sidebar class="grid-item sidebar"></sidebar>
-		<div class="grid-item speed">
-			<p>Speed</p>
-			<h2 id="number"><span id="counter"></span><br /><span id="eenheid"></span></h2>
-		</div>
+
+		<!-- DATAVISUALISATIE DISTANCE MARS/UNTIL LANDING -->
 		<div class="grid-item distance">
 			<p>Until landing</p>
 			<div class="myChartDistance">
@@ -35,9 +36,18 @@
 				<h2 id="landed" style="display: none;">LANDED</h2>
 			</div>
 		</div>
-		<footer class="grid-item footer">
-			<h1>&copy; 2018 - <a href="http://giraffedesign.nl/" class="copyright">Giraffe Design</a></h1>
-		</footer>
+
+		<!-- DATAVISUALISATIE SPEED -->
+		<div class="grid-item speed">
+			<p>Speed</p>
+			<h2 id="number"><span id="counter"></span><br /><span id="eenheid"></span></h2>
+		</div>
+
+		<!-- OPVULLING RECHTERKANT WEBSITE -->
+		<sidebar class="grid-item sidebar"></sidebar>
+
+		<!-- HIERIN ZIJN DE DATAVISUALISATIES VORMGEGEVEN -->
 		<script type="text/javascript" src="scripts/scripts.js"></script>
+
 	</body>
 </html>

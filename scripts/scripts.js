@@ -1,5 +1,4 @@
-// UPDATE CHARTS
-
+// UPDATEN VAN DE CHARTS
 var step = 0;
 var myVar = setInterval(myStock, 1000);
 var duration = 200;
@@ -32,7 +31,6 @@ function updateChartDistance(stapangle) {
 }
 
 // OPLOPENDE, CONTANTE EN DALENDE SNELHEID
-
 var opstijgen = true;
 var myVar = setInterval(myTimer, 100);
 var counter = 0;
@@ -54,7 +52,7 @@ function myTimer() {
 		counter += 755;
 	}
 
-}//function mytimer()
+}
 function indeLucht() {
 
 	if (opstijgen == true) {
@@ -71,7 +69,7 @@ function indeLucht() {
 function dalen() {
 	setInnerHTML();
 	if (counter <= 0) {
-		//stop
+
 		counter = 0;
 		setInnerHTML();
 		clearInterval(dalenInt);
@@ -93,8 +91,7 @@ function dalen() {
 	}
 }
 
-// DATAVISUALISATIONS
-
+// DATAVISUALISATIONS CHART.JS
 var ctx = document.getElementById('stock');
 var myStockChart = new Chart(ctx, {
     type: 'radar',
@@ -162,7 +159,6 @@ var myDistanceChart = new Chart(ctx, {
       datasets: [
         {
           label: 'distance',
-          // backgroundColor: ['#283137'],
           backgroundColor: 'rgba(40, 49, 55, 0.1)',
           borderColor: 'rgba(40, 49, 55, 0.8)',
           borderWidth: [0],
