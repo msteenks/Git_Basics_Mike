@@ -1,6 +1,6 @@
 html {
 	box-sizing: border-box;
-	background: url("images/bg.jpg") no-repeat center center;
+	background: url("images/background.jpg") no-repeat center center;
 	background-size: cover;
 	background-attachment: fixed;
 }
@@ -44,7 +44,7 @@ p {
 /* STYLES HEADER */
 .header {
 	grid-area: header;
-	background: url("images/logo.png") no-repeat center center;
+	background: url("images/logo_spacex.png") no-repeat center center;
 	height: 100px;
 	width: auto;
 	margin-left: 5%;
