@@ -1,7 +1,7 @@
 html {
 	box-sizing: border-box;
-  background: url("images/bg.jpg") no-repeat center center;
-  background-size: cover;
+	background: url("images/bg.jpg") no-repeat center center;
+	background-size: cover;
 	background-attachment: fixed;
 }
 
@@ -15,13 +15,13 @@ body {
 	margin-bottom: 0px;
 	margin-left: 0px;
 	margin-right: 0px;
-  display: grid;
+	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-row-gap: 20px;
-  grid-template-areas:
-    "header header sidebar"
-    "stock planets sidebar"
-    "distance speed sidebar";
+	grid-template-areas:
+		"header header sidebar"
+		"stock planets sidebar"
+		"distance speed sidebar";
 }
 
 
@@ -37,7 +37,7 @@ div {
 p {
 	font-size: 20px;
 	font-weight: 500;
-  padding-left: 10%;
+	padding-left: 10%;
 }
 
 
@@ -150,13 +150,13 @@ h3 {
 		margin-bottom: 0px;
 		margin-left: 0px;
 		margin-right: 0px;
-	  display: grid;
+		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-row-gap: 20px;
-	  grid-template-areas:
-	    "header header sidebar"
-	    "stock planets sidebar"
-	    "distance speed sidebar";
+		grid-template-areas:
+			"header header sidebar"
+			"stock planets sidebar"
+			"distance speed sidebar";
 	}
 
 	/* GENERAL STYLES */
@@ -171,7 +171,7 @@ h3 {
 	p {
 		font-size: 20px;
 		font-weight: 500;
-	  padding-left: 10%;
+		padding-left: 10%;
 	}
 
 	/* STYLES STOCK */
@@ -221,13 +221,13 @@ h3 {
 		margin-bottom: 0px;
 		margin-left: 50px;
 		margin-right: 0px;
-	  display: grid;
+		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-row-gap: 20px;
-	  grid-template-areas:
-	    "header header sidebar"
-	    "stock planets sidebar"
-	    "distance speed sidebar";
+		grid-template-areas:
+			"header header sidebar"
+			"stock planets sidebar"
+			"distance speed sidebar";
 	}
 
 	/* GENERAL STYLES */
@@ -246,20 +246,20 @@ h3 {
 		margin-bottom: 0px;
 		margin-left: 0px;
 		margin-right: 0px;
-	  display: grid;
+		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-row-gap: 20px;
-	  grid-template-areas:
-	    "header header"
-	    "stock planets"
-	    "distance speed";
+		grid-template-areas:
+			"header header"
+			"stock planets"
+			"distance speed";
 	}
 
 	/* GENERAL STYLES */
 	p {
 		font-size: 20px;
 		font-weight: 500;
-	  padding-left: 10%;
+		padding-left: 10%;
 	}
 
 	div {
@@ -275,14 +275,14 @@ h3 {
 @media only screen and (max-width: 550px) {
 
 	body {
-	  display: grid;
+		display: grid;
 		grid-template-columns: 1fr;
 		grid-row-gap: 20px;
-	  grid-template-areas:
-	    "header"
-	    "stock"
+		grid-template-areas:
+			"header"
+			"stock"
 			"planets"
-	    "distance"
+			"distance"
 			"speed";
 	}
 

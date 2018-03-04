@@ -37,7 +37,7 @@ var counter = 0;
 var dalenInt;
 function setInnerHTML() {
 	document.getElementById("counter").innerHTML = counter;
-  document.getElementById("eenheid").innerHTML = ' KM/H';
+	document.getElementById("eenheid").innerHTML = ' KM/H';
 
 }
 
@@ -59,9 +59,8 @@ function indeLucht() {
 		opstijgen = false;
 		setTimeout(function() {
 			dalen();
-
 			clearInterval(myVar);
-			 dalenInt = setInterval(dalen, 100)
+			dalenInt = setInterval(dalen, 100)
 		}, 145000);
 	}
 }
@@ -94,86 +93,86 @@ function dalen() {
 // DATAVISUALISATIONS CHART.JS
 var ctx = document.getElementById('stock');
 var myStockChart = new Chart(ctx, {
-    type: 'radar',
-    backgroundColor: '#283137',
-    data: {
-      labels: ['%', 'Oxygen', 'Fuel', 'Food', 'Water'],
-      datasets: [
-        {
-          label: 'Stock',
-          backgroundColor: 'rgba(40, 49, 55, 0.1)',
-          borderColor: '#283137',
-          borderWidth: 2,
-          lineTension: 10,
-          data: [0, duration, duration, duration, duration]
-        }
-      ]
-    },
-    options: {
-			tooltips: {
-				enabled: false,
-			},
-	    animation: {
-	      duration: 5000,
-	    },
-    legend: {
-        display: false,
-    }
-  }
+	type: 'radar',
+	backgroundColor: '#283137',
+	data: {
+		labels: ['%', 'Oxygen', 'Fuel', 'Food', 'Water'],
+		datasets: [
+			{
+				label: 'Stock',
+				backgroundColor: 'rgba(40, 49, 55, 0.1)',
+				borderColor: '#283137',
+				borderWidth: 2,
+				lineTension: 10,
+				data: [0, duration, duration, duration, duration]
+			}
+		]
+	},
+	options: {
+		tooltips: {
+			enabled: false,
+		},
+		animation: {
+			duration: 5000,
+		},
+		legend: {
+			display: false,
+		}
+	}
 });
 
 var ctx = document.getElementById('planets');
 var myPlanetsChart = new Chart(ctx, {
-    type: 'polarArea',
-    data: {
-      label: ['Earth', 'Venus', 'Mercury'],
-      datasets: [
-        {
-          label: 'Distance',
-          backgroundColor: ['#283137', '#a7a7a7', '#bdcad0'],
-          borderWidth: [0, 0, 0],
-          data: [48, 73, 105]
-        }
-      ],
-      labels: ['Earth', 'Venus', 'Mercury'],
-    },
-    options: {
-      animation: {
-        duration: 5000,
-      },
-      legend: {
-        display: true,
-        labels: {
-          boxWidth: 10,
-          fontSize: 10,
-        }
-      }
-    }
+	type: 'polarArea',
+	data: {
+		label: ['Earth', 'Venus', 'Mercury'],
+		datasets: [
+			{
+				label: 'Distance',
+				backgroundColor: ['#283137', '#a7a7a7', '#bdcad0'],
+				borderWidth: [0, 0, 0],
+				data: [48, 73, 105]
+			}
+		],
+		labels: ['Earth', 'Venus', 'Mercury'],
+	},
+	options: {
+		animation: {
+			duration: 5000,
+		},
+		legend: {
+			display: true,
+			labels: {
+				boxWidth: 10,
+				fontSize: 10,
+			}
+		}
+	}
 });
 
 var ctx = document.getElementById('distance');
 var myDistanceChart = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      label: ['', 'Distance'],
-      datasets: [
-        {
-          label: 'distance',
-          backgroundColor: 'rgba(40, 49, 55, 0.1)',
-          borderColor: 'rgba(40, 49, 55, 0.8)',
-          borderWidth: [0],
-          data: [0, duration],
-        }
-      ],
-      labels: ['', 'Distance'],
-    },
-    options: {
-      cutoutPercentage: 80,
-			tooltips: {
-				enabled: false,
-			},
-      legend: {
-        display: false,
-      }
-    }
+	type: 'doughnut',
+	data: {
+		label: ['', 'Distance'],
+		datasets: [
+			{
+				label: 'distance',
+				backgroundColor: 'rgba(40, 49, 55, 0.1)',
+				borderColor: 'rgba(40, 49, 55, 0.8)',
+				borderWidth: [0],
+				data: [0, duration],
+			}
+		],
+		labels: ['', 'Distance'],
+	},
+	options: {
+		cutoutPercentage: 80,
+		tooltips: {
+			enabled: false,
+		},
+		legend: {
+			display: false,
+		}
+	}
 });
