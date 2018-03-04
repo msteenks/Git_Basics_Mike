@@ -97,16 +97,14 @@ var myStockChart = new Chart(ctx, {
 	backgroundColor: '#283137',
 	data: {
 		labels: ['%', 'Oxygen', 'Fuel', 'Food', 'Water'],
-		datasets: [
-			{
-				label: 'Stock',
-				backgroundColor: 'rgba(40, 49, 55, 0.1)',
-				borderColor: '#283137',
-				borderWidth: 2,
-				lineTension: 10,
-				data: [0, duration, duration, duration, duration]
-			}
-		]
+		datasets: [{
+			label: 'Stock',
+			backgroundColor: 'rgba(40, 49, 55, 0.1)',
+			borderColor: '#283137',
+			borderWidth: 2,
+			lineTension: 10,
+			data: [0, duration, duration, duration, duration]
+		}]
 	},
 	options: {
 		tooltips: {
@@ -126,14 +124,12 @@ var myPlanetsChart = new Chart(ctx, {
 	type: 'polarArea',
 	data: {
 		label: ['Earth', 'Venus', 'Mercury'],
-		datasets: [
-			{
-				label: 'Distance',
-				backgroundColor: ['#283137', '#a7a7a7', '#bdcad0'],
-				borderWidth: [0, 0, 0],
-				data: [48, 73, 105]
-			}
-		],
+		datasets: [{
+			label: 'Distance',
+			backgroundColor: ['#283137', '#a7a7a7', '#bdcad0'],
+			borderWidth: [0, 0, 0],
+			data: [48, 73, 105]
+		}],
 		labels: ['Earth', 'Venus', 'Mercury'],
 	},
 	options: {
@@ -155,15 +151,13 @@ var myDistanceChart = new Chart(ctx, {
 	type: 'doughnut',
 	data: {
 		label: ['', 'Distance'],
-		datasets: [
-			{
-				label: 'distance',
-				backgroundColor: 'rgba(40, 49, 55, 0.1)',
-				borderColor: 'rgba(40, 49, 55, 0.8)',
-				borderWidth: [0],
-				data: [0, duration],
-			}
-		],
+		datasets: [{
+			label: 'distance',
+			backgroundColor: 'rgba(40, 49, 55, 0.1)',
+			borderColor: 'rgba(40, 49, 55, 0.8)',
+			borderWidth: [0],
+			data: [0, duration],
+		}],
 		labels: ['', 'Distance'],
 	},
 	options: {
